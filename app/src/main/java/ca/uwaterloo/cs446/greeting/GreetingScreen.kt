@@ -1,4 +1,4 @@
-package ca.uwaterloo.cs446.helloworld
+package ca.uwaterloo.cs446.greeting
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -10,7 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import ca.uwaterloo.cs446.ui.theme.CS446Demo1251Theme
 
 @Composable
-fun GreetingPage() {
+fun GreetingScreen() {
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         Greeting(
             name = "Android",

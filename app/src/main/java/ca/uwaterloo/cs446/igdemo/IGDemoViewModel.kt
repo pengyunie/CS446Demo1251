@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
@@ -14,14 +13,14 @@ import kotlin.concurrent.thread
 
 // ViewModel
 
-data class MainContentUiState(
+data class IGDemoUiState(
     val clickedDogImage: String? = null,
     val dogImages: List<String> = emptyList(),
 )
 
-class MainContentViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(MainContentUiState())
-    val uiState: StateFlow<MainContentUiState> = _uiState.asStateFlow()
+class IGDemoViewModel : ViewModel() {
+    private val _uiState = MutableStateFlow(IGDemoUiState())
+    val uiState: StateFlow<IGDemoUiState> = _uiState.asStateFlow()
 
     init {
         thread {

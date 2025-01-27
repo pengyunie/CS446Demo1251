@@ -36,8 +36,8 @@ import coil.compose.AsyncImage
 
 
 @Composable
-fun IGDemoPage(
-    viewModel: MainContentViewModel = viewModel()
+fun IGDemoScreen(
+    viewModel: IGDemoViewModel = viewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
