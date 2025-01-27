@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import ca.uwaterloo.cs446.greeting.GreetingScreen
 import ca.uwaterloo.cs446.igdemo.IGDemoScreen
 import ca.uwaterloo.cs446.ui.theme.CS446Demo1251Theme
 
