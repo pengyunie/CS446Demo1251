@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import ca.uwaterloo.cs446.greeting.GreetingScreen
 import ca.uwaterloo.cs446.igdemo.IGDemoScreen
+import ca.uwaterloo.cs446.igdemowomvvm.IGDemoWoMvvmScreen
 import ca.uwaterloo.cs446.ui.theme.CS446Demo1251Theme
 
 class MainActivity : ComponentActivity() {
@@ -14,7 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CS446Demo1251Theme {
-                IGDemoScreen()
+                IGDemoWoMvvmScreen()
             }
         }
     }
