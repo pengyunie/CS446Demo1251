@@ -18,6 +18,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
@@ -46,6 +47,8 @@ fun IGDemoWoMvvmScreen() {
     //   remember - the variable's lifecycle now is the same as the Composable
     //              meaning that its value won't be erased due to recomposition
     //   remember with mutableStateOf - the change to the value also triggers recomposition
+    //   you can change to rememberSaveable so that it survives configuration changes as well,
+    //       but MVVM is recommended for Views with multiple/complex state variables (like this one)
     val clickedDogImage = remember { mutableStateOf<String?>(null) }
     // List to hold dog images (initialized as empty)
     var dogImages: List<String> = emptyList()
