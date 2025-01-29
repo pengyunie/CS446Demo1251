@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CS446Demo1251Theme {
-                IGDemoWoMvvmScreen()
+                IGDemoScreen()
             }
         }
     }

@@ -39,25 +39,32 @@ import coil.compose.AsyncImage
 fun IGDemoScreen(
     viewModel: IGDemoViewModel = viewModel()
 ) {
+    // Get UI state from the ViewModel
+    // This state survives recomposition and recreation (e.g., screen rotation) of the Composable
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
+    // Main screen layout container
     Scaffold(
         Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) { innerPadding ->
+        // Vertical layout container
         Column(Modifier.padding(innerPadding)) {
+            // Screen title
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Instagram",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Medium
             )
+            // Horizontal scrollable row for stories
             Row(
                 Modifier
                     .horizontalScroll(rememberScrollState())
                     .padding(horizontal = 16.dp, vertical = 16.dp)
             ) {
+                // Loop through dog images to create story avatars
                 for (dogImage in uiState.dogImages) {
                     StoryAvatar(imageUrl = dogImage, onClick = {
                         viewModel.updateClickedDogImage(dogImage)
@@ -66,6 +73,7 @@ fun IGDemoScreen(
             }
         }
 
+        // Fullscreen overlay when an image is clicked
         if (uiState.clickedDogImage != null) {
             FullScreenStory(imageUrl = uiState.clickedDogImage!!, onClick = {
                 viewModel.updateClickedDogImage(null)

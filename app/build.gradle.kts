@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.coil.compose)
     // for making http calls
     implementation(libs.okhttp)
+    implementation(libs.okhttp.coroutines)
     // for (de)serialization of JSON
     implementation(libs.kotlinx.serialization.json)
     // for viewmodel utilities

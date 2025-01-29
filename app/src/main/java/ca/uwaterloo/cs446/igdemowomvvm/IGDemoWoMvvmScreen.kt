@@ -42,29 +42,39 @@ import kotlin.concurrent.thread
 
 @Composable
 fun IGDemoWoMvvmScreen() {
-    var clickedDogImage = remember { mutableStateOf<String?>(null) }
+    // State management for tracking clicked dog image
+    //   remember - the variable's lifecycle now is the same as the Composable
+    //              meaning that its value won't be erased due to recomposition
+    //   remember with mutableStateOf - the change to the value also triggers recomposition
+    val clickedDogImage = remember { mutableStateOf<String?>(null) }
+    // List to hold dog images (initialized as empty)
     var dogImages: List<String> = emptyList()
     thread {
         dogImages = fetchDogImages()
-    }.join()
+    }.join()  // This blocks the main thread - not recommended in real apps
 
+    // Main screen layout container
     Scaffold(
         Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) { innerPadding ->
+        // Vertical layout container
         Column(Modifier.padding(innerPadding)) {
+            // Screen title
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Instagram",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Medium
             )
+            // Horizontal scrollable row for stories
             Row(
                 Modifier
                     .horizontalScroll(rememberScrollState())
                     .padding(horizontal = 16.dp, vertical = 16.dp)
             ) {
+                // Loop through dog images to create story avatars
                 for (dogImage in dogImages) {
                     StoryAvatar(imageUrl = dogImage, onClick = {
                         clickedDogImage.value = dogImage
@@ -73,6 +83,7 @@ fun IGDemoWoMvvmScreen() {
             }
         }
 
+        // Fullscreen overlay when an image is clicked
         if (clickedDogImage.value != null) {
             FullScreenStory(imageUrl = clickedDogImage.value!!, onClick = {
                 clickedDogImage.value = null
