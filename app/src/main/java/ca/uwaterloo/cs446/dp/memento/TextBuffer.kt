@@ -26,12 +26,12 @@ class TextBuffer {
     // other operations
     fun insert(chars: String) {
         text = text.substring(0, cursorPosition) + chars + text.substring(cursorPosition)
-        cursorPosition += text.length
+        cursorPosition += chars.length
         println("insert [cursor@$cursorPosition, text=$text]")
     }
 
     fun delete() {
-        if (cursorPosition >= 0) {
+        if (cursorPosition > 0) {
             text = text.substring(0, cursorPosition - 1) + text.substring(cursorPosition)
             cursorPosition--
         }
