@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CS446Demo1251</string>
+    <string name="calculate_tip">Calculate Tip</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="tip_percentage">Tip Percentage</string>
+    <string name="round_up_tip">Round up tip?</string>
+    <string name="tip_amount">Tip Amount: %s</string>
 </resources>
