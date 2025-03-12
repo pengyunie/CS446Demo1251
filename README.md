@@ -17,3 +17,12 @@ The example is based on the [HelloAndroid example from previous years](https://g
 - [path to the version with ViewModel (`IGDemoScreen`)](./app/src/main/java/ca/uwaterloo/cs446/igdemo)
 
 Note that this demo needs Internet access permission in [AndroidManifest](./app/src/main/AndroidManifest.xml): `<uses-permission android:name="android.permission.INTERNET" />`.
+
+## demo: testing
+
+Writing unit tests (for both Model and ViewModel parts) and UI tests.
+The example is based on the [Tip Time demo from Google](https://github.com/google-developer-training/basic-android-kotlin-compose-training-tip-calculator)
+
+- [path to source code](https://github.com/pengyunie/CS446Demo1251/tree/main/app/src/main/java/ca/uwaterloo/cs446/tiptime)
+- [path to unit tests](https://github.com/pengyunie/CS446Demo1251/tree/main/app/src/test/java/ca/uwaterloo/cs446/tiptime)
+- [path to UI tests](https://github.com/pengyunie/CS446Demo1251/tree/main/app/src/androidTest/java/ca/uwaterloo/cs446/tiptime)
