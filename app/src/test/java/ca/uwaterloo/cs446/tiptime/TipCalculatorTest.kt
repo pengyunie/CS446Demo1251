@@ -19,5 +19,15 @@ class TipCalculatorTest {
         assertEquals(4.2, tip, 1e-6)
     }
 
-    // TODO: add a test case testCalculateTip_withRoundUp()
+    @Test
+    fun testCalculateTip_withRoundUp() {
+        val calculator = TipCalculator()
+        calculator.amount = 42.0
+        calculator.tipPercent = 10.0
+        calculator.roundUp = true
+
+        val tip = calculator.calculateTip()
+
+        assertEquals(5.0, tip, 1e-6)
+    }
 }
